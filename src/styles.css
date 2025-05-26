@@ -1,6 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --font: 'Poppins', sans-serif;
+  --font-main: 'Poppins', sans-serif;
   --font-heading: 'Yanone Kaffeesatz', sans-serif;
+}
+
+@layer base {
+  html {
+    @apply font-main text-white accent-yellow-300;
+  }
+
+  body {
+    @apply m-0 bg-radial from-green-900 to-green-950;
+  }
+
+  a {
+    @apply underline;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto p-2 w-[96%] max-w-4xl;
+  }
 }
