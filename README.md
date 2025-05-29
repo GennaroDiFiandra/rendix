@@ -1,4 +1,4 @@
-# 📈 Fixed Interest Calculator (Angular App)
+# 📈 Rendix
 
 This Angular application allows users to calculate the yield of a fixed-rate investment, taking into account optional interest capitalization.
 
@@ -12,7 +12,7 @@ Users can fill out a form with the following fields:
 * 🔁 **Interest frequency** – Every how many months are interests paid?
 * ♻️ **Capitalization** – Should the interests be capitalized?
 
-Once the form is submitted, a dynamic table is generated below showing the detailed month-by-month breakdown of the investment, including:
+Once the form is submitted, a dynamic table is generated showing the detailed month-by-month breakdown of the investment, including:
 
 * The initial amount at the start of the month
 * The interests accrued during the month
