@@ -1,0 +1,92 @@
+<form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+  <div class="flex flex-col mb-6">
+    <label for="amount"
+      >Investment amount<br />
+      <span class="text-sm italic">How much do you want to invest?</span>
+    </label>
+    <input
+      class="p-2 text-xs"
+      id="amount"
+      type="text"
+      inputmode="decimal"
+      formControlName="amount"
+    />
+    @if (calculatorForm.get("amount")?.invalid && calculatorForm.get("amount")?.dirty) {
+    <span class="text-sm italic">Please enter the amount you wish to invest</span>
+    }
+  </div>
+
+  <div class="flex flex-col mb-6">
+    <label for="duration"
+      >Duration in months<br />
+      <span class="text-sm italic">For how many months?</span>
+    </label>
+    <input
+      class="p-2 text-xs"
+      id="duration"
+      type="text"
+      inputmode="numeric"
+      formControlName="duration"
+    />
+    @if (calculatorForm.get("duration")?.invalid && calculatorForm.get("duration")?.dirty) {
+    <span class="text-sm italic">Please enter the number of months for the investment</span>
+    }
+  </div>
+
+  <div class="flex flex-col mb-6">
+    <label for="rate"
+      >Interest rate<br />
+      <span class="text-sm italic">What is the annual interest rate?</span>
+    </label>
+    <input class="p-2 text-xs" id="rate" type="text" inputmode="decimal" formControlName="rate" />
+    @if (calculatorForm.get("rate")?.invalid && calculatorForm.get("rate")?.dirty) {
+    <span class="text-sm italic"
+      >Please enter the annual interest rate (number only, without the % symbol)</span
+    >
+    }
+  </div>
+
+  <div class="flex flex-col mb-6">
+    <label for="frequency"
+      >Interest frequency<br />
+      <span class="text-sm italic">Every how many months are interests paid?</span>
+    </label>
+    <input
+      class="p-2 text-xs"
+      id="frequency"
+      type="text"
+      inputmode="numeric"
+      formControlName="frequency"
+    />
+    @if (calculatorForm.get("frequency")?.invalid && calculatorForm.get("frequency")?.dirty) {
+    <span class="text-sm italic"
+      >Please enter the frequency in months at which interest is credited</span
+    >
+    }
+  </div>
+
+  <div class="mb-6">
+    <p>Should the interests be capitalized?</p>
+
+    <div class="flex gap-8">
+      <div class="flex gap-1">
+        <input id="capitalized" type="radio" formControlName="capitalization" [value]="true" />
+        <label for="capitalized">
+          <span class="text-sm italic">Yes</span>
+        </label>
+      </div>
+
+      <div class="flex gap-1">
+        <input id="not-capitalized" type="radio" formControlName="capitalization" [value]="false" />
+        <label for="not-capitalized">
+          <span class="text-sm italic">No</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="calculatorForm.invalid">Calculate</button>
+  @if (calculatorForm.invalid) {
+  <p class="text-sm italic">Complete the form to enable the button</p>
+  }
+</form>
