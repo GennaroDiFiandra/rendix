@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-main: 'Poppins', sans-serif;
@@ -7,7 +7,7 @@
 
 @layer base {
   html {
-    @apply font-main text-white accent-yellow-300;
+    @apply font-main text-white text-base accent-yellow-300;
   }
 
   body {
@@ -16,6 +16,34 @@
 
   a {
     @apply underline;
+  }
+
+  button {
+    @apply bg-yellow-300 text-green-950 font-bold border border-solid border-yellow-300 rounded-lg px-4 py-0.5 transition duration-150 hover:cursor-pointer hover:bg-white;
+  }
+
+  button[disabled] {
+    @apply bg-gray-300 text-gray-400 border-gray-300 hover:cursor-default;
+  }
+
+  input {
+    @apply border border-solid border-white rounded-lg;
+  }
+
+  input.ng-dirty.ng-invalid {
+    @apply border-red-500 outline outline-solid outline-red-500;
+  }
+
+  table {
+    @apply font-mono;
+  }
+
+  table :where(th, td) {
+    @apply px-2 py-1;
+  }
+
+  table caption {
+    @apply italic;
   }
 }
 
