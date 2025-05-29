@@ -1,7 +1,7 @@
-import { Component, output, OutputEmitterRef } from '@angular/core';
+import { Component, inject, output, OutputEmitterRef } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Configuration } from './calculator.model';
-import { parseDecimal } from '../shared/utils/number-utils';
+import { NumberUtilsService } from '../shared/services/number-utils.service';
 
 @Component({
   selector: 'app-calculator',
@@ -9,6 +9,8 @@ import { parseDecimal } from '../shared/utils/number-utils';
   templateUrl: './calculator.component.html',
 })
 export class CalculatorComponent {
+  private numberUtils = inject(NumberUtilsService);
+
   calculatorForm: FormGroup = new FormGroup({
     amount: new FormControl('', [
       Validators.required,
@@ -43,9 +45,9 @@ export class CalculatorComponent {
     const rawConfiguration: Configuration<string> = this.calculatorForm.value;
 
     this.changeConfiguration.emit({
-      amount: parseDecimal(rawConfiguration.amount),
+      amount: this.numberUtils.parseDecimal(rawConfiguration.amount),
       duration: parseInt(rawConfiguration.duration),
-      rate: parseDecimal(rawConfiguration.rate),
+      rate: this.numberUtils.parseDecimal(rawConfiguration.rate),
       frequency: parseInt(rawConfiguration.frequency),
       capitalization: rawConfiguration.capitalization,
     });
