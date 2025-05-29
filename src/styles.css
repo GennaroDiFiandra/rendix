@@ -27,7 +27,7 @@
   }
 
   input {
-    @apply border border-solid border-white rounded-lg;
+    @apply border border-solid border-white rounded-lg accent-green-400;
   }
 
   input.ng-dirty.ng-invalid {
