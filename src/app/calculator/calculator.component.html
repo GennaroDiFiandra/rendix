@@ -12,7 +12,9 @@
       formControlName="amount"
     />
     @if (calculatorForm.get("amount")?.invalid && calculatorForm.get("amount")?.dirty) {
-    <span class="text-sm italic">Please enter the amount you wish to invest</span>
+    <span class="text-sm italic"
+      >Please enter the amount you wish to invest (without the thousand separator)</span
+    >
     }
   </div>
 
@@ -40,9 +42,7 @@
     </label>
     <input class="p-2 text-xs" id="rate" type="text" inputmode="decimal" formControlName="rate" />
     @if (calculatorForm.get("rate")?.invalid && calculatorForm.get("rate")?.dirty) {
-    <span class="text-sm italic"
-      >Please enter the annual interest rate (number only, without the % symbol)</span
-    >
+    <span class="text-sm italic">Please enter the annual interest rate (without the % symbol)</span>
     }
   </div>
 
