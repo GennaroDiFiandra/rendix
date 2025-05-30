@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/",
+    "public": "dist/rendix/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
