@@ -11,6 +11,16 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "/.**",
+        "destination": "https://rendix.gennarodifiandra.it",
+        "type": 301,
+        "glob": "**",
+        "statusCode": 301,
+        "strong": true
+      }
     ]
   }
 }
