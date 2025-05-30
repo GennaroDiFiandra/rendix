@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class NumberUtilsService {
   parseDecimal(value: string): number {
-    return parseFloat(value.replace(',', '.'));
+    return parseFloat(value.replace(',', '.')) || 0;
   }
 }
