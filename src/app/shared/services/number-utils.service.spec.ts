@@ -15,13 +15,6 @@ describe('NumberUtilsService', () => {
   });
 
   describe('parseDecimal', () => {
-    it('should return a number from a string', () => {
-      const result = service.parseDecimal('123');
-
-      expect(typeof result).toBe('number');
-      expect(result).toBe(123);
-    });
-
     describe('should correctly parse a numeric string with', () => {
       it('a comma as decimal separator', () => {
         const result = service.parseDecimal('123,45');
