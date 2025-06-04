@@ -28,22 +28,22 @@
 
   input {
     @apply border border-solid border-white rounded-lg accent-green-400;
-  }
 
-  input.ng-dirty.ng-invalid {
-    @apply border-red-500 outline outline-solid outline-red-500;
+    &.ng-dirty.ng-invalid {
+      @apply border-red-500 outline outline-solid outline-red-500;
+    }
   }
 
   table {
     @apply font-mono;
-  }
 
-  table :where(th, td) {
-    @apply px-2 py-1;
-  }
+    & :where(th, td) {
+      @apply px-2 py-1;
+    }
 
-  table caption {
-    @apply italic;
+    & caption {
+      @apply italic;
+    }
   }
 }
 
