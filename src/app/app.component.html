@@ -1,6 +1,6 @@
 <app-header />
 
-<main class="container rounded-b-lg my-8 flex flex-wrap justify-between gap-8">
+<main class="container my-8 flex flex-wrap justify-between gap-8">
   <app-calculator class="w-96" (changeConfiguration)="onGetConfiguration($event)" />
 
   @if (configuration) {
