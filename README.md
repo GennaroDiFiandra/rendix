@@ -4,7 +4,7 @@ Address [rendix.gennarodifiandra.it](https://rendix.gennarodifiandra.it/)
 
 This Angular application allows users to calculate the yield of a fixed-rate investment, taking into account optional interest capitalization.
 
-### 🧾 Features
+## 🧾 Features
 
 Users can fill out a form with the following fields:
 
